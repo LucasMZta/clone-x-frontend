@@ -11,7 +11,7 @@ export const tweet1: Tweet = {
    retweetCount: 1,
    liked: true,
    retweeted: false,
-   dataPost: new Date(2024, 9, 25, 11, 0)
+   dataPost: new Date(2024, 8, 25, 13, 30)
 }
 
 export const tweet2: Tweet = {
@@ -23,7 +23,7 @@ export const tweet2: Tweet = {
    retweetCount: 365,
    liked: false,
    retweeted: true,
-   dataPost: new Date(2024, 9, 14, 17, 50)
+   dataPost: new Date(2024, 8, 25, 17, 15)
 }
 
 export const tweet3: Tweet = {
@@ -35,5 +35,17 @@ export const tweet3: Tweet = {
    retweetCount: 365,
    liked: false,
    retweeted: true,
-   dataPost: new Date(2024, 9, 14, 17, 50)
+   dataPost: new Date(2024, 8, 14, 17, 50)
+}
+export const tweet4: Tweet = {
+   id: 133,
+   user: user,
+   body: 'Kaspersky deixa os EUA e instala outro antivírus no lugar sem avisar. Plataforma foi banida pelo governo, mas fez migração automática de usuários para o UltraAV..',
+   image: 'https://media.kasperskydaily.com/wp-content/uploads/sites/92/2022/08/24093836/kaspersky-home-products-2022-featured-1500x844.jpg',
+   likeCount: 111,
+   commentCount: 0,
+   retweetCount: 2,
+   liked: false,
+   retweeted: true,
+   dataPost: new Date(2024, 7, 1, 18, 0)
 }

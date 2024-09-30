@@ -16,7 +16,7 @@ type Props = {
 export default function Layout({ children }: Props) {
    return (
       <main className="min-h-screen flex justify-center mx-auto max-w-7xl">
-         <section className="hidden lg:flex flex-col sticky top-0 h-screen w-60 xl:w-72  px-3 border-r-2 border-zinc-900">
+         <section className="hidden lg:flex flex-col sticky top-0 h-screen w-60 xl:w-64  px-3 border-r-2 border-zinc-900">
             <div className="flex-1 mt-6">
                <Logo size={24} />
                <nav className="mt-11">

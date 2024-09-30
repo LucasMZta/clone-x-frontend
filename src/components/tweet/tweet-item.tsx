@@ -1,14 +1,16 @@
 "use client"
 
 import { Tweet } from "@/types/tweet"
+import { getFormatRelativeTime } from "@/utils/get-format-relative";
 import { Heart, MessageCircle, Repeat } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
 type Props = {
    tweet: Tweet;
+   hideComments?: boolean;
 }
-export const TweetItem = ({ tweet }: Props) => {
+export const TweetItem = ({ tweet, hideComments }: Props) => {
 
    const [liked, setLiked] = useState(tweet.liked);
 
@@ -26,7 +28,7 @@ export const TweetItem = ({ tweet }: Props) => {
          <div className="flex-1">
             <div className="flex flex-wrap items-center gap-x-3 h-8">
                <Link href={`/${tweet.user.slug}`} className="font-bold text-lg">{tweet.user.name}</Link>
-               <div className="text-xs text-zinc-500">@{tweet.user.slug}</div>
+               <div className="text-xs text-zinc-500">@{tweet.user.slug} - {getFormatRelativeTime(tweet.dataPost)}</div>
             </div>
             <div className="py-4 text-lg">{tweet.body}</div>
             {tweet.image &&
@@ -35,14 +37,17 @@ export const TweetItem = ({ tweet }: Props) => {
                </div>
             }
             <div className="flex mt-2 text-zinc-500">
-               <div className="flex-1">
-                  <Link href={`/tweet/${tweet.id}`}>
-                     <div className="inline-flex items-center gap-1 cursor-pointer">
-                        <MessageCircle className="size-6" />
-                        <span className="text-lg">{tweet.commentCount}</span>
-                     </div>
-                  </Link>
-               </div>
+
+               {!hideComments &&
+                  <div className="flex-1">
+                     <Link href={`/tweet/${tweet.id}`}>
+                        <div className="inline-flex items-center gap-1 cursor-pointer">
+                           <MessageCircle className="size-6" />
+                           <span className="text-lg">{tweet.commentCount}</span>
+                        </div>
+                     </Link>
+                  </div>
+               }
                <div className="flex-1">
                   <div className="inline-flex items-center gap-1 ">
                      <Repeat className="size-6" />

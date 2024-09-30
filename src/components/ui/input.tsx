@@ -20,7 +20,7 @@ export const Input = ({ filled, Icon, password, onEnter, ...props }: Props) => {
    }
 
    return (
-      <div className={`has-[:focus]:border-zinc-100 flex items-center h-14 rounded-3xl border-2 border-zinc-700 ${filled && 'bg-zinc-800 text-zinc-400'}`}>
+      <div className={`has-[:focus]:border-zinc-200 flex items-center h-14 rounded-3xl border-2 border-zinc-700 ${filled && 'bg-zinc-800 text-zinc-400'}`}>
          {Icon &&
             <Icon className="ml-4" />
          }

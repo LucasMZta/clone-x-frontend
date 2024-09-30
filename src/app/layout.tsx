@@ -4,6 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Z",
   description: "Social Media Z",
+  icons: '/logo.png'
 };
 
 export default function RootLayout({
